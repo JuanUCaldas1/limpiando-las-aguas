@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c3v13hugbemxv" path="res://Scenes/Enemies/leever_red.tscn" id="9_urmrc"]
 [ext_resource type="PackedScene" uid="uid://dxtadqk50evyw" path="res://Scenes/Enemies/stalfos.tscn" id="10_63h8e"]
 [ext_resource type="PackedScene" uid="uid://csj780cktsgui" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_octorok.tscn" id="10_k1u84"]
-[ext_resource type="AudioStream" uid="uid://pepv2mj3oksk" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/08_Music/combat.wav" id="11_k1u84"]
+[ext_resource type="AudioStream" uid="uid://c11fvhi5x7w4h" path="res://Assets/Audio/Moonlit_Water’s_Edge.mp3" id="11_s1fxw"]
 [ext_resource type="PackedScene" uid="uid://dnbkdqsdr1t28" path="res://Scenes/UI/hud.tscn" id="12_orbrj"]
 [ext_resource type="PackedScene" uid="uid://bk7hi5oubt0a2" path="res://Scenes/UI/pantalla_final.tscn" id="13_s1fxw"]
 
@@ -270,7 +270,7 @@ z_index = 100
 position = Vector2(1383, 808)
 
 [node name="AudioMusicaJuego" type="AudioStreamPlayer" parent="." unique_id=1283404260]
-stream = ExtResource("11_k1u84")
+stream = ExtResource("11_s1fxw")
 autoplay = true
 
 [node name="HUD" parent="." unique_id=1351427620 instance=ExtResource("12_orbrj")]
