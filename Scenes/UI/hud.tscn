@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dnbkdqsdr1t28"]
+
+[ext_resource type="Script" uid="uid://sdywct6e6ntm" path="res://Scenes/UI/hud.gd" id="1_sprlj"]
+
+[node name="HUD" type="CanvasLayer" unique_id=1351427620]
+script = ExtResource("1_sprlj")
+
+[node name="BarraLimpieza" type="ProgressBar" parent="." unique_id=1246425152]
+custom_minimum_size = Vector2(60, 6)
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 64.0
+offset_bottom = 31.0
+max_value = 20.0

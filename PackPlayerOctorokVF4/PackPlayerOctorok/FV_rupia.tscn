@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bwjbdgqs4j5x4"]
+
+[ext_resource type="Script" uid="uid://2iqv1fs1bq7m" path="res://INTEGRACION FINAL/PackPlayerOctorok/FV_rupia.gd" id="1_ndnra"]
+[ext_resource type="Texture2D" uid="uid://ddwrydn282edv" path="res://INTEGRACION FINAL/PackPlayerOctorok/01_Items/5_Rupies.png" id="1_re4co"]
+[ext_resource type="AudioStream" uid="uid://djtfsvy7hb6q1" path="res://INTEGRACION FINAL/PackPlayerOctorok/07_Effects Sounds/Rupee - Cursor.wav" id="3_jrb8f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yee0"]
+radius = 4.0
+height = 16.0
+
+[node name="FV_Rupia" type="Area2D" unique_id=496178915]
+scale = Vector2(0.5, 0.5)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ndnra")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1153256904]
+texture = ExtResource("1_re4co")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926301380]
+shape = SubResource("CapsuleShape2D_0yee0")
+
+[node name="AudioItemRupie" type="AudioStreamPlayer2D" parent="." unique_id=62524007]
+stream = ExtResource("3_jrb8f")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

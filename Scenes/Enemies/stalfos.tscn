@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dxtadqk50evyw"]
+
+[ext_resource type="Script" uid="uid://c7abraxc6kami" path="res://Scripts/Enemies/stalfos.gd" id="1_icn7q"]
+[ext_resource type="Texture2D" uid="uid://buapki3c2vhiu" path="res://Assets/03_Underworld_Enemies/Stalfos.png" id="2_xhxvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojbw0"]
+size = Vector2(12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stb2v"]
+atlas = ExtResource("2_xhxvy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg105"]
+atlas = ExtResource("2_xhxvy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5iys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stb2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg105")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bj6l8"]
+radius = 9.0
+
+[node name="Stalfos" type="CharacterBody2D" unique_id=1847117339 groups=["ENEMIES", "ENEMIGOS"]]
+collision_layer = 524289
+collision_mask = 513
+script = ExtResource("1_icn7q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=31736777]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ojbw0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1422320834]
+sprite_frames = SubResource("SpriteFrames_r5iys")
+animation = &"walk"
+frame = 1
+frame_progress = 0.8116298
+
+[node name="RayCast2D_UP" type="RayCast2D" parent="." unique_id=607236935]
+target_position = Vector2(0, -15)
+collide_with_areas = true
+
+[node name="RayCast2D2_DOWN" type="RayCast2D" parent="." unique_id=1005490250]
+target_position = Vector2(0, 15)
+collide_with_areas = true
+
+[node name="RayCast2D3_LEFT" type="RayCast2D" parent="." unique_id=1333364143]
+target_position = Vector2(-15, 0)
+collide_with_areas = true
+
+[node name="RayCast2D4_RIGHT" type="RayCast2D" parent="." unique_id=1078011151]
+target_position = Vector2(15, 0)
+collide_with_areas = true
+
+[node name="ZoneDamagebox" type="Area2D" parent="." unique_id=1385705884]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDamagebox" unique_id=644074528]
+shape = SubResource("CircleShape2D_bj6l8")

@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cjn281yjtvs4l"]
+
+[ext_resource type="Script" uid="uid://cernrgouf4ga5" path="res://Scenes/Enemies/tektite_blue.gd" id="1_jkd8f"]
+[ext_resource type="PackedScene" uid="uid://cc23fkyhkcfbr" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_death_expand.tscn" id="2_5bnbu"]
+[ext_resource type="Texture2D" uid="uid://cb84lhqd28xs1" path="res://Assets/02_Overworld_Enemies/Tektite_Blue.png" id="2_mmtjg"]
+[ext_resource type="PackedScene" uid="uid://pwqmuayeif58" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_death_effect.tscn" id="3_tk7yi"]
+[ext_resource type="PackedScene" uid="uid://bwjbdgqs4j5x4" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_rupia.tscn" id="4_o2s1a"]
+[ext_resource type="PackedScene" uid="uid://bn7oih70cfxq3" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_heart.tscn" id="5_oit37"]
+[ext_resource type="PackedScene" uid="uid://dfbsvuyt83cr0" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_bomba.tscn" id="6_x27iw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojbw0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_elesr"]
+atlas = ExtResource("2_mmtjg")
+region = Rect2(0, 0, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ao0m"]
+atlas = ExtResource("2_mmtjg")
+region = Rect2(16, 0, 16, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5iys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_elesr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ao0m")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5iys"]
+
+[node name="TektiteBlue" type="CharacterBody2D" unique_id=1893975230 groups=["ENEMIES", "ENEMIGOS"]]
+collision_layer = 524289
+collision_mask = 513
+script = ExtResource("1_jkd8f")
+death_expand_scene = ExtResource("2_5bnbu")
+death_effect_scene = ExtResource("3_tk7yi")
+rupie_scene = ExtResource("4_o2s1a")
+heart_scene = ExtResource("5_oit37")
+bomba_scene = ExtResource("6_x27iw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1944100405]
+shape = SubResource("RectangleShape2D_ojbw0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2103922887]
+sprite_frames = SubResource("SpriteFrames_r5iys")
+animation = &"jump"
+frame = 1
+frame_progress = 0.88614845
+
+[node name="RayCast2D_UP_LEFT" type="RayCast2D" parent="." unique_id=1229495164]
+target_position = Vector2(-15, -15)
+collide_with_areas = true
+
+[node name="RayCast2D2_UP_RIGHT" type="RayCast2D" parent="." unique_id=174673239]
+target_position = Vector2(15, -15)
+collide_with_areas = true
+
+[node name="RayCast2D3_DOWN_LEFT" type="RayCast2D" parent="." unique_id=1033179333]
+target_position = Vector2(-15, 15)
+collide_with_areas = true
+
+[node name="RayCast2D4_DOWN_RIGHT" type="RayCast2D" parent="." unique_id=475382673]
+target_position = Vector2(15, 15)
+collide_with_areas = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=215873062]
+collision_layer = 536870920
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=333240035]
+shape = SubResource("RectangleShape2D_r5iys")
+
+[node name="audio_explosion" type="AudioStreamPlayer2D" parent="." unique_id=308899566]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

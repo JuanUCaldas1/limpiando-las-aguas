@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://pwqmuayeif58"]
+
+[ext_resource type="Script" uid="uid://1ts8b7dx6eyl" path="res://INTEGRACION FINAL/PackPlayerOctorok/FV_death_effect.gd" id="1_bcme8"]
+[ext_resource type="Texture2D" uid="uid://cwekuv0xu7jif" path="res://INTEGRACION FINAL/PackPlayerOctorok/06_Death_enemy/Miscellaneous - Enemy Death.png" id="2_nwxi7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_741v0"]
+atlas = ExtResource("2_nwxi7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdhfu"]
+atlas = ExtResource("2_nwxi7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y31pn"]
+atlas = ExtResource("2_nwxi7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jh0i"]
+atlas = ExtResource("2_nwxi7")
+region = Rect2(48, 0, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ostoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_741v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdhfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y31pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jh0i")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FV_deathCenter" type="Node2D" unique_id=1834629424]
+script = ExtResource("1_bcme8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1257800598]
+sprite_frames = SubResource("SpriteFrames_ostoq")
+autoplay = "default"
+frame = 1
+frame_progress = 0.9554144
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

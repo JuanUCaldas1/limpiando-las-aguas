@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4ypiniemin5k"
+path="res://.godot/imported/Beast Scream 2 Quiet.wav-5972268f2e4c628201a3ba1899c3d2fd.sample"
+
+[deps]
+
+source_file="res://PackPlayerOctorokVF4/PackPlayerOctorok/07_Effects Sounds/Beast Scream 2 Quiet.wav"
+dest_files=["res://.godot/imported/Beast Scream 2 Quiet.wav-5972268f2e4c628201a3ba1899c3d2fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

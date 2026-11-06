@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fhvrj57b7y3"
+path="res://.godot/imported/Link Die.wav-72ea4bd4d94ab0d24da88aa9bf3fccb6.sample"
+
+[deps]
+
+source_file="res://PackPlayerOctorokVF4/PackPlayerOctorok/07_Effects Sounds/Link Die.wav"
+dest_files=["res://.godot/imported/Link Die.wav-72ea4bd4d94ab0d24da88aa9bf3fccb6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

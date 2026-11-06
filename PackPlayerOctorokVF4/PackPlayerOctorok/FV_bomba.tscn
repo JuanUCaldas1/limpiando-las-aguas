@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dfbsvuyt83cr0"]
+
+[ext_resource type="Script" uid="uid://c7ow2wmj6puxk" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/fv_bomba.gd" id="1_y4ve3"]
+[ext_resource type="Texture2D" uid="uid://d2ktx7axmnev5" path="res://Assets/01_Items/Bomb.png" id="2_43ykc"]
+[ext_resource type="AudioStream" uid="uid://x6ewlht05y30" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/07_Effects Sounds/Explosion.wav" id="3_sp36a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bj6l8"]
+radius = 7.071068
+
+[node name="FV_bomba" type="Area2D" unique_id=1770183572]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_y4ve3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1198869569]
+texture = ExtResource("2_43ykc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1240387304]
+shape = SubResource("CircleShape2D_bj6l8")
+
+[node name="Timer" type="Timer" parent="." unique_id=560025661]
+
+[node name="AudioItem" type="AudioStreamPlayer2D" parent="." unique_id=1475911910]
+stream = ExtResource("3_sp36a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

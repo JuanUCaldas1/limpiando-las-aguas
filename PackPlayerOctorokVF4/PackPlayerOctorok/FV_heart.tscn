@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bn7oih70cfxq3"]
+
+[ext_resource type="Texture2D" uid="uid://dlwlwqc07afgy" path="res://INTEGRACION FINAL/PackPlayerOctorok/01_Items/Heart_Container.png" id="1_452e1"]
+[ext_resource type="Script" uid="uid://b5cf25ow0kc30" path="res://INTEGRACION FINAL/PackPlayerOctorok/FV_heart.gd" id="1_v4aiu"]
+[ext_resource type="AudioStream" uid="uid://deaags881171k" path="res://INTEGRACION FINAL/PackPlayerOctorok/07_Effects Sounds/Item Get.wav" id="3_jgxw8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ostoq"]
+radius = 6.0
+
+[node name="FV_Heart" type="Area2D" unique_id=1933405529]
+scale = Vector2(0.5, 0.5)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_v4aiu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2070418953]
+texture = ExtResource("1_452e1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=268240338]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_ostoq")
+
+[node name="AudioItemGet" type="AudioStreamPlayer2D" parent="." unique_id=1541514760]
+stream = ExtResource("3_jgxw8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

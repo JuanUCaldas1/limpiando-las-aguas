@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dktaqaa17ol47"
+path="res://.godot/imported/Link Hurt.wav-9ab37d340eb24fb9c4e6703f7d23ecc2.sample"
+
+[deps]
+
+source_file="res://PackPlayerOctorokVF4/PackPlayerOctorok/07_Effects Sounds/Link Hurt.wav"
+dest_files=["res://.godot/imported/Link Hurt.wav-9ab37d340eb24fb9c4e6703f7d23ecc2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

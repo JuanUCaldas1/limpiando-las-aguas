@@ -10,10 +10,14 @@ config_version=5
 
 [application]
 
-config/name="zelda-1986"
-run/main_scene="uid://cgbdmyyvns4rs"
+config/name="Proyecto Final"
+run/main_scene="uid://rf4wj2f12mrl"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*uid://chjqap0uot5xg"
 
 [display]
 
@@ -21,6 +25,10 @@ window/size/viewport_width=256
 window/size/viewport_height=176
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[global_group]
+
+ENEMIGOS="Enemigos del exterior"
 
 [input]
 

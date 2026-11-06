@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://wr75fxukblqg"]
+
+[ext_resource type="Script" uid="uid://ckgov58gtjw7s" path="res://INTEGRACION FINAL/PackPlayerOctorok/FV_sword_magic.gd" id="1_axr3r"]
+[ext_resource type="Texture2D" uid="uid://tyvorwgqypwv" path="res://INTEGRACION FINAL/PackPlayerOctorok/01_Items/Sword.png" id="1_e3px4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_axr3r"]
+size = Vector2(4, 15)
+
+[node name="FV_sword_magic" type="Area2D" unique_id=451041285]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_axr3r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1558845447]
+texture = ExtResource("1_e3px4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1987097237]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_axr3r")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1007459426]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

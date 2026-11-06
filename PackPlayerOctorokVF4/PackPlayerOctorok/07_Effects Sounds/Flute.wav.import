@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c41dvwch73qtx"
+path="res://.godot/imported/Flute.wav-b974c0c5d569b7c175298d5862bc1fc1.sample"
+
+[deps]
+
+source_file="res://PackPlayerOctorokVF4/PackPlayerOctorok/07_Effects Sounds/Flute.wav"
+dest_files=["res://.godot/imported/Flute.wav-b974c0c5d569b7c175298d5862bc1fc1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

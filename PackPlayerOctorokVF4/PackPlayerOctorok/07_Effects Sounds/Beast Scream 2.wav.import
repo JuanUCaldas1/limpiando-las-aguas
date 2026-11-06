@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bii046hppi48a"
+path="res://.godot/imported/Beast Scream 2.wav-ed8410fc24083e6ec6ed68d7954541de.sample"
+
+[deps]
+
+source_file="res://PackPlayerOctorokVF4/PackPlayerOctorok/07_Effects Sounds/Beast Scream 2.wav"
+dest_files=["res://.godot/imported/Beast Scream 2.wav-ed8410fc24083e6ec6ed68d7954541de.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

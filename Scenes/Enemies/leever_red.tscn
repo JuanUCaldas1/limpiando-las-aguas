@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://c3v13hugbemxv"]
+
+[ext_resource type="Script" uid="uid://bmbjih1m6p0ok" path="res://Scripts/Enemies/leever_red.gd" id="1_gtvgs"]
+[ext_resource type="Texture2D" uid="uid://cx2gqeeavjo31" path="res://Assets/02_Overworld_Enemies/Leever_Red.png" id="2_vqbrd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ojbw0"]
+radius = 8.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry1fu"]
+atlas = ExtResource("2_vqbrd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cxlm"]
+atlas = ExtResource("2_vqbrd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5iys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry1fu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cxlm")
+}],
+"loop": 1,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bj6l8"]
+radius = 8.0
+
+[node name="LeeverRed" type="CharacterBody2D" unique_id=396585850 groups=["ENEMIES", "ENEMIGOS"]]
+collision_layer = 524289
+collision_mask = 513
+script = ExtResource("1_gtvgs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1655867640]
+shape = SubResource("CircleShape2D_ojbw0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1100176172]
+sprite_frames = SubResource("SpriteFrames_r5iys")
+animation = &"move"
+frame_progress = 0.63569003
+
+[node name="RayCast2D_UP" type="RayCast2D" parent="." unique_id=904319825]
+target_position = Vector2(0, -15)
+collide_with_areas = true
+
+[node name="RayCast2D2_DOWN" type="RayCast2D" parent="." unique_id=977929322]
+target_position = Vector2(0, 15)
+collide_with_areas = true
+
+[node name="RayCast2D3_LEFT" type="RayCast2D" parent="." unique_id=135481998]
+target_position = Vector2(-15, 0)
+collide_with_areas = true
+
+[node name="RayCast2D4_RIGHT" type="RayCast2D" parent="." unique_id=2066281112]
+target_position = Vector2(15, 0)
+collide_with_areas = true
+
+[node name="ZoneDamagebox" type="Area2D" parent="." unique_id=1184964008]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDamagebox" unique_id=487979930]
+shape = SubResource("CircleShape2D_bj6l8")

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bk7hi5oubt0a2"]
+
+[ext_resource type="Script" uid="uid://dml1vt4c5dhc" path="res://Scripts/pantalla_final.gd" id="1_c1qbv"]
+
+[node name="PantallaFinal" type="CanvasLayer" unique_id=367187455]
+process_mode = 3
+script = ExtResource("1_c1qbv")
+
+[node name="Mensaje" type="Label" parent="." unique_id=1577472846]
+custom_minimum_size = Vector2(240, 40)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -61.0
+offset_right = 122.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 5
+text = "¡Zona limpia!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Educativo" type="Label" parent="." unique_id=2044332212]
+custom_minimum_size = Vector2(220, 0)
+offset_left = 20.0
+offset_top = 61.0
+offset_right = 240.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 5
+text = "Al reciclar y evitar verter desechos a los ríos y mares, proteges la biodiversidad de nuestro planeta."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BotonReintentar" type="Button" parent="." unique_id=950830175]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = 22.0
+offset_right = 49.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 5
+text = "Reintentar"
+
+[node name="Puntaje" type="Label" parent="." unique_id=1092017421]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -37.0
+offset_right = 22.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 5

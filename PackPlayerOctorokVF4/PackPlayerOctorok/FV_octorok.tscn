@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://csj780cktsgui"]
+
+[ext_resource type="Script" uid="uid://clwoyo8htg5bf" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_octorok.gd" id="1_16r6r"]
+[ext_resource type="Texture2D" uid="uid://iwckcli4unss" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/02_Overworld_Enemies/Octorok_Red_Down.png" id="1_wwxn2"]
+[ext_resource type="PackedScene" uid="uid://cc23fkyhkcfbr" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_death_expand.tscn" id="2_7kwqy"]
+[ext_resource type="PackedScene" uid="uid://bwjbdgqs4j5x4" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_rupia.tscn" id="2_12h5t"]
+[ext_resource type="Texture2D" uid="uid://b1ma483pixe7e" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/02_Overworld_Enemies/Octorok_Red_Left.png" id="2_16r6r"]
+[ext_resource type="PackedScene" uid="uid://pwqmuayeif58" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_death_effect.tscn" id="3_7kwqy"]
+[ext_resource type="PackedScene" uid="uid://bn7oih70cfxq3" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_heart.tscn" id="3_lfgjs"]
+[ext_resource type="Texture2D" uid="uid://b7gmoswyxjhjw" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/02_Overworld_Enemies/Octorok_Red_Right.png" id="3_xdmjy"]
+[ext_resource type="Texture2D" uid="uid://co5jf8jax8uxa" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/02_Overworld_Enemies/Octorok_Red_Up.png" id="4_12h5t"]
+[ext_resource type="PackedScene" uid="uid://dfbsvuyt83cr0" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/FV_bomba.tscn" id="6_a7o7q"]
+[ext_resource type="AudioStream" uid="uid://x6ewlht05y30" path="res://PackPlayerOctorokVF4/PackPlayerOctorok/07_Effects Sounds/Explosion.wav" id="11_38ink"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfgjs"]
+atlas = ExtResource("1_wwxn2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37s8b"]
+atlas = ExtResource("1_wwxn2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kwqy"]
+atlas = ExtResource("2_16r6r")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38ink"]
+atlas = ExtResource("2_16r6r")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhq5w"]
+atlas = ExtResource("3_xdmjy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aye4"]
+atlas = ExtResource("3_xdmjy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty5ha"]
+atlas = ExtResource("4_12h5t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8koe"]
+atlas = ExtResource("4_12h5t")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ostoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfgjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37s8b")
+}],
+"loop": 1,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kwqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38ink")
+}],
+"loop": 1,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhq5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7aye4")
+}],
+"loop": 1,
+"name": &"move_rigth",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty5ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8koe")
+}],
+"loop": 1,
+"name": &"move_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ewtop"]
+radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ro7rq"]
+size = Vector2(18, 16)
+
+[node name="FV_octorok" type="CharacterBody2D" unique_id=292424278 groups=["ENEMIES"]]
+collision_layer = 524289
+collision_mask = 513
+script = ExtResource("1_16r6r")
+death_expand_scene = ExtResource("2_7kwqy")
+death_effect_scene = ExtResource("3_7kwqy")
+rupie_scene = ExtResource("2_12h5t")
+heart_scene = ExtResource("3_lfgjs")
+bomba_scene = ExtResource("6_a7o7q")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1208483159]
+sprite_frames = SubResource("SpriteFrames_ostoq")
+animation = &"move_down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=636463953]
+shape = SubResource("CircleShape2D_ewtop")
+
+[node name="RayCast_Up" type="RayCast2D" parent="." unique_id=622258440]
+target_position = Vector2(0, -10)
+
+[node name="RayCast_Down" type="RayCast2D" parent="." unique_id=1573954957]
+target_position = Vector2(0, 10)
+
+[node name="RayCast_Right" type="RayCast2D" parent="." unique_id=792291814]
+target_position = Vector2(10, 0)
+
+[node name="RayCast_Left" type="RayCast2D" parent="." unique_id=832457973]
+target_position = Vector2(-10, 0)
+
+[node name="ZoneDamagebox" type="Area2D" parent="." unique_id=1257154859]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDamagebox" unique_id=787805315]
+shape = SubResource("RectangleShape2D_ro7rq")
+
+[node name="TimerCooldown" type="Timer" parent="." unique_id=704477008]
+autostart = true
+
+[node name="AudioExplosion" type="AudioStreamPlayer2D" parent="." unique_id=1835074730]
+stream = ExtResource("11_38ink")
+
+[connection signal="timeout" from="TimerCooldown" to="." method="_on_timer_cooldown_timeout"]
