@@ -27,15 +27,37 @@ vertical_alignment = 1
 
 [node name="Educativo" type="Label" parent="." unique_id=2044332212]
 custom_minimum_size = Vector2(220, 0)
-offset_left = 20.0
-offset_top = 61.0
-offset_right = 240.0
-offset_bottom = 102.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -42.5
+offset_right = 110.0
+offset_bottom = -1.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 5
 text = "Al reciclar y evitar verter desechos a los ríos y mares, proteges la biodiversidad de nuestro planeta."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="BotonTriviaFinal" type="Button" parent="." unique_id=2052714853]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -9.5
+offset_right = 45.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 5
+text = "Trivia final"
 
 [node name="BotonReintentar" type="Button" parent="." unique_id=950830175]
 anchors_preset = 8
@@ -43,10 +65,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = 22.0
-offset_right = 49.0
-offset_bottom = 53.0
+offset_left = -45.5
+offset_top = 28.5
+offset_right = 45.5
+offset_bottom = 59.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 5

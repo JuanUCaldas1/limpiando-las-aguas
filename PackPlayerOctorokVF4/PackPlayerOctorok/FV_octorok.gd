@@ -87,28 +87,21 @@ func animations() -> void:
 	elif direction == Vector2.LEFT:
 		animated_sprite_2d.play("move_left")
 	
-func change_direction()-> void:
+func change_direction() -> void:
 	var available_directions := []
-	
-	if not ray_cast_up.is_colliding():
-		available_directions.append(Vector2.UP)
-	if not ray_cast_down.is_colliding():
-		available_directions.append(Vector2.DOWN)
-	if not ray_cast_right.is_colliding():
-		available_directions.append(Vector2.RIGHT)
-	if not ray_cast_left.is_colliding():
-		available_directions.append(Vector2.LEFT)
-		
+	var direcciones := [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
+	var rayos := [ray_cast_up, ray_cast_down, ray_cast_left, ray_cast_right]
+
+	for i in direcciones.size():
+		var dir: Vector2 = direcciones[i]
+		var siguiente_pos: Vector2 = global_position + dir * 16
+		if not rayos[i].is_colliding() and es_agua(siguiente_pos):
+			available_directions.append(dir)
+
 	if available_directions.is_empty():
 		return
-		
-	#if available_directions.size() > 1:
-		#available_directions.erase(direction)
-		
+
 	direction = available_directions.pick_random()
-	
-	print("Obtaculo detectado")
-	
 #----------------------------------
 #Soltar Objeto Aleatorio
 #----------------------------------
@@ -144,6 +137,13 @@ func drop_random_item() -> void:
 		#get_parent().add_child(item)
 		get_parent().call_deferred("add_child", item)
 		
+func es_agua(pos: Vector2) -> bool:
+	var mapa: TileMapLayer = get_tree().current_scene.get_node("Tiles_Group/TileMapLayer_overworld")
+	var celda: Vector2i = mapa.local_to_map(mapa.to_local(pos))
+	var datos: TileData = mapa.get_cell_tile_data(celda)
+	if datos == null:
+		return false
+	return datos.get_custom_data("Agua") == true
 #Funcion de muerte del enemigo 
 func die() -> void:
 	
